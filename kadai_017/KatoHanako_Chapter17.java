@@ -10,5 +10,4 @@ public class KatoHanako_Chapter17 extends Kato_Chapter17 {
     public void eachIntroduce() {
         System.out.println(this.message);
     }
-    
 }

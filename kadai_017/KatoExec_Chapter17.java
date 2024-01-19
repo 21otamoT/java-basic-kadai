@@ -3,6 +3,7 @@ package kadai_017;
 public class KatoExec_Chapter17 {
 
 	public static void main(String[] args) {
+
 		KatoTaro_Chapter17 taro = new KatoTaro_Chapter17();
         taro.setGivenName();
         Kato_Chapter17.commonIntroduce();
@@ -22,6 +23,7 @@ public class KatoExec_Chapter17 {
         Kato_Chapter17.commonIntroduce();
         Kato_Chapter17.execIntroduce();
         hanako.eachIntroduce();
+
 	}
 
 }
