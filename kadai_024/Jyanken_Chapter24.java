@@ -39,10 +39,10 @@ public class Jyanken_Chapter24 {
         return choices.get(enChoices[index]);
     }
     
-    public void playGame(String myChoice,String enemy) {     //じゃんけんを行う
+    public void playGame(String myChoice, String enemy) {     //じゃんけんを行う
         
         try {
-        switch(getMyChoice(myChoice)) {
+        switch(myChoice) {
             case "グー" -> {
                 if(enemy.equals("グー")) {
                     result = results[1];
@@ -76,7 +76,7 @@ public class Jyanken_Chapter24 {
                     result = results[1];
                 }
             }
-            default -> result = "じゃんけんができません";
+            default -> result = "r,s,pのどれかを入力してください";
         };
         }
         catch(NullPointerException e) {
@@ -84,7 +84,7 @@ public class Jyanken_Chapter24 {
         }
         
         System.out.println(myChoice);
-        System.out.println("自分の手は"+getMyChoice(myChoice)+"、対戦相手の手は"+ enemy);
+        System.out.println("自分の手は"+myChoice+"、対戦相手の手は"+ enemy);
         System.out.println(result);
     }
 }
