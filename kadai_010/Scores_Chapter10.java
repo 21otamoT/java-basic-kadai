@@ -22,7 +22,7 @@ public class Scores_Chapter10 {
 	    	
 	    	// SQLクエリを準備
             statement = con.createStatement();
-            String sql = "UPDATE scores SET score_math=95,score_english=80 WHERE id = 1;";
+            String sql = "UPDATE scores SET score_math=95,score_english=80 WHERE id = 5;";
             
             // SQLクエリを実行（DBMSに送信）
 	    	System.out.println("レコード更新を実行します");
@@ -30,25 +30,17 @@ public class Scores_Chapter10 {
 		    System.out.println(rowCnt + "件のレコードが更新されました");
 		    
 		    // SQLクエリを準備
-		    sql = "SELECT * FROM scores";
+		    sql = "SELECT * FROM scores ORDER BY score_math DESC,score_english DESC;";
 		    
 		    // SQLクエリを実行（DBMSに送信）
 		    ResultSet table = statement.executeQuery(sql);
 		    int scoreMath = 0; 
-		    String colomn = "score_math";
-		    String order = "SELECT * FROM scores ORDER BY "+colomn+" DESC";
 		    System.out.println("数学・英語の点数が高い順に並べ替えました");
 		    while(table.next()) {
 		    	int id = table.getInt("id");
-		    	System.out.println(id);
 		    	String name = table.getString("name");
 		    	int scoreMath2 = table.getInt("score_math");
 		    	int scoreEn = table.getInt("score_english");
-		    	if(scoreMath == scoreMath2) {
-		    		colomn = "score_english";
-		    	}
-		    	scoreMath = scoreMath2;
-//		    	statement.executeQuery(order);	
 		    	System.out.println(table.getRow()+"件目：生徒ID="+id+"／氏名="+name+"／数学="+scoreMath2+"／英語="+scoreEn);
 		    }
 	    }
