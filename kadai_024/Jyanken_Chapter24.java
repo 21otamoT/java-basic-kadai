@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Jyanken_Chapter24 {
-    Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
     HashMap<String,String> choices = new HashMap<>();
     String[] enChoices = {"r","s","p"};
     String[] jaChoices = {"グー","チョキ","パー"};
@@ -12,19 +12,15 @@ public class Jyanken_Chapter24 {
     String result = "";
     
     Jyanken_Chapter24() {
-        input();
         System.out.println("自分のじゃんけんの手を入力しましょう");
         System.out.println("グーはrockのrを入力しましょう");
         System.out.println("チョキはscissorsのsを入力しましょう");
         System.out.println("パーはpaperのpを入力しましょう");
-    }
-    
-    public void input() {
         for (int i = 0;i < enChoices.length ; i++ ) {
             choices.put(enChoices[i],jaChoices[i]);
             results[i] = sc.next();
         }
-        sc.close();
+    	sc.close();
     }
     
     public String getMyChoice(String myChoice) {//自分のじゃんけんの手を入力する
