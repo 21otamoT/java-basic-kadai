@@ -17,7 +17,6 @@ public class Jyanken_Chapter24 {
             choices.put(this.enChoices[i],this.jaChoices[i]);
             results[i] = sc.next();
         }
-    	sc.close();
         System.out.println("自分のじゃんけんの手を入力しましょう");
         System.out.println("グーはrockのrを入力しましょう");
         System.out.println("チョキはscissorsのsを入力しましょう");
