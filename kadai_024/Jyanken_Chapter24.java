@@ -1,22 +1,16 @@
 package kadai_024;
 
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Jyanken_Chapter24 {
-	Scanner sc = new Scanner(System.in);
     private HashMap<String,String> choices = new HashMap<>();
     private String[] enChoices = new String[3];
     private String[] jaChoices = new String[3];
-    private String[] results = new String[3];
+    private String[] results = {"自分の負けです","あいこです","自分の勝ちです"};
     private String result;
     
     Jyanken_Chapter24() {
     	getRandom();
-    	for (int i = 0;i < this.enChoices.length ; i++ ) {
-            choices.put(this.enChoices[i],this.jaChoices[i]);
-            results[i] = sc.next();
-        }
         System.out.println("自分のじゃんけんの手を入力しましょう");
         System.out.println("グーはrockのrを入力しましょう");
         System.out.println("チョキはscissorsのsを入力しましょう");
@@ -37,6 +31,9 @@ public class Jyanken_Chapter24 {
     	this.jaChoices[0] = "グー";
     	this.jaChoices[1] = "チョキ";
     	this.jaChoices[2] = "パー";
+    	for (int i = 0; i < enChoices.length; i++) {
+			choices.put(enChoices[i], jaChoices[i]);
+		}
         int index = (int)(Math.floor(Math.random() * 3));
         return this.choices.get(this.enChoices[index]);
     }

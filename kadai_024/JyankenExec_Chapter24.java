@@ -8,9 +8,9 @@ public class JyankenExec_Chapter24 {
 		Jyanken_Chapter24 janken = new Jyanken_Chapter24();
 		Scanner sc = new Scanner(System.in);
 		String myChoice = janken.getMyChoice(sc.next());
-		sc.close();
 		String enemy = janken.getRandom();
 		janken.playGame(myChoice, enemy);
+		sc.close();
 	}
 
 }
